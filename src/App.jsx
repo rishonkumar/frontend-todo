@@ -6,9 +6,9 @@ import { Todos } from "./components/Todos.jsx";
 
 function App() {
 
-  const [todos, setTodos] = useState([]);
+  const [selectedId, setSelectedId] = useState(1);
 
-  // [] only run once
+  // [] only run once 
   // [todo] runs when todo changes (render)
 
   // useEffect(() => {
@@ -29,8 +29,12 @@ function App() {
 
   return (
     <>
-      <CreateTodos />
-      <Todos id={2} />
+      {/* <CreateTodos />
+      <Todos id={2} /> */}
+      <button onClick={() => setSelectedId(1)}>Todo 1</button>
+      <button onClick={() => setSelectedId(2)}>Todo 2</button>
+      <button onClick={() => setSelectedId(3)}>Todo 3</button>
+      <Todos id={selectedId} />
     </>
   )
 }
