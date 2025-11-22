@@ -18,14 +18,7 @@ function App() {
   // }, []);
 
 
-  // this code will fetch todos every 10 seconds
-  useEffect(() => {
-    setInterval(() => {
-      fetch("https://jsonplaceholder.typicode.com/todos/")
-        .then(res => res.json())
-        .then(data => setTodos(data));
-    }, 10000);
-  }, []);
+
 
   return (
     <>
