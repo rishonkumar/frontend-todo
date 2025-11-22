@@ -4,12 +4,21 @@ export const Todos = ({ id }) => {
 
     const [todo, setTodo] = useState({})
 
+
     useEffect(() => {
         const data = fetch("https://jsonplaceholder.typicode.com/todos/" + id)
             .then(res => res.json())
             .then(data => setTodo(data))
 
     }, [id]) //run again when id changes
+
+    // this code will fetch todos every 10 seconds
+    // useEffect(() => {
+    //     setInterval(() => {
+    //     fetch("https://jsonplaceholder.typicode.com/todos/")
+    //         .then(res => res.json())
+    //     }, 10000);
+    // }, []);
 
 
     return (
